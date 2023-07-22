@@ -3,19 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23A26562156350ACBB14700F /* Pods_nogleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71F4400EF83204DE9DE8262 /* Pods_nogleTest.framework */; };
 		B0CCC0382A6BD73C002467BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC0372A6BD73C002467BC /* AppDelegate.swift */; };
 		B0CCC03A2A6BD73C002467BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC0392A6BD73C002467BC /* SceneDelegate.swift */; };
 		B0CCC03C2A6BD73C002467BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC03B2A6BD73C002467BC /* ViewController.swift */; };
 		B0CCC03F2A6BD73C002467BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC03D2A6BD73C002467BC /* Main.storyboard */; };
 		B0CCC0412A6BD73F002467BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC0402A6BD73F002467BC /* Assets.xcassets */; };
 		B0CCC0442A6BD73F002467BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC0422A6BD73F002467BC /* LaunchScreen.storyboard */; };
+		B0CCC04C2A6BDE90002467BC /* CustomPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC04B2A6BDE90002467BC /* CustomPagingViewController.swift */; };
+		B0CCC04E2A6BDFBF002467BC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC04D2A6BDFBF002467BC /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A4FD19FF1F3C18A31B0A43E /* Pods-nogleTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nogleTest.release.xcconfig"; path = "Target Support Files/Pods-nogleTest/Pods-nogleTest.release.xcconfig"; sourceTree = "<group>"; };
+		752C76BA73C4BFFC64FE3450 /* Pods-nogleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nogleTest.debug.xcconfig"; path = "Target Support Files/Pods-nogleTest/Pods-nogleTest.debug.xcconfig"; sourceTree = "<group>"; };
 		B0CCC0342A6BD73C002467BC /* nogleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nogleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0CCC0372A6BD73C002467BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0CCC0392A6BD73C002467BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,9 @@
 		B0CCC0402A6BD73F002467BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0CCC0432A6BD73F002467BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0CCC0452A6BD73F002467BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0CCC04B2A6BDE90002467BC /* CustomPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPagingViewController.swift; sourceTree = "<group>"; };
+		B0CCC04D2A6BDFBF002467BC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		D71F4400EF83204DE9DE8262 /* Pods_nogleTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nogleTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23A26562156350ACBB14700F /* Pods_nogleTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05ACD464753F578F08EA6F84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D71F4400EF83204DE9DE8262 /* Pods_nogleTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0CCC02B2A6BD73C002467BC = {
 			isa = PBXGroup;
 			children = (
 				B0CCC0362A6BD73C002467BC /* nogleTest */,
 				B0CCC0352A6BD73C002467BC /* Products */,
+				ECE3474050BE729B3CBE94B2 /* Pods */,
+				05ACD464753F578F08EA6F84 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +78,24 @@
 				B0CCC0372A6BD73C002467BC /* AppDelegate.swift */,
 				B0CCC0392A6BD73C002467BC /* SceneDelegate.swift */,
 				B0CCC03B2A6BD73C002467BC /* ViewController.swift */,
+				B0CCC04D2A6BDFBF002467BC /* ViewModel.swift */,
+				B0CCC04B2A6BDE90002467BC /* CustomPagingViewController.swift */,
 				B0CCC03D2A6BD73C002467BC /* Main.storyboard */,
 				B0CCC0402A6BD73F002467BC /* Assets.xcassets */,
 				B0CCC0422A6BD73F002467BC /* LaunchScreen.storyboard */,
 				B0CCC0452A6BD73F002467BC /* Info.plist */,
 			);
 			path = nogleTest;
+			sourceTree = "<group>";
+		};
+		ECE3474050BE729B3CBE94B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				752C76BA73C4BFFC64FE3450 /* Pods-nogleTest.debug.xcconfig */,
+				5A4FD19FF1F3C18A31B0A43E /* Pods-nogleTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0CCC0482A6BD73F002467BC /* Build configuration list for PBXNativeTarget "nogleTest" */;
 			buildPhases = (
+				A075C49D468DE1A5920D3233 /* [CP] Check Pods Manifest.lock */,
 				B0CCC0302A6BD73C002467BC /* Sources */,
 				B0CCC0312A6BD73C002467BC /* Frameworks */,
 				B0CCC0322A6BD73C002467BC /* Resources */,
+				8B974B69FD51CE5376289C4B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -103,7 +136,7 @@
 				};
 			};
 			buildConfigurationList = B0CCC02F2A6BD73C002467BC /* Build configuration list for PBXProject "nogleTest" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -133,11 +166,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8B974B69FD51CE5376289C4B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-nogleTest/Pods-nogleTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-nogleTest/Pods-nogleTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nogleTest/Pods-nogleTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A075C49D468DE1A5920D3233 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-nogleTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B0CCC0302A6BD73C002467BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0CCC04E2A6BDFBF002467BC /* ViewModel.swift in Sources */,
+				B0CCC04C2A6BDE90002467BC /* CustomPagingViewController.swift in Sources */,
 				B0CCC03C2A6BD73C002467BC /* ViewController.swift in Sources */,
 				B0CCC0382A6BD73C002467BC /* AppDelegate.swift in Sources */,
 				B0CCC03A2A6BD73C002467BC /* SceneDelegate.swift in Sources */,
@@ -282,6 +359,7 @@
 		};
 		B0CCC0492A6BD73F002467BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 752C76BA73C4BFFC64FE3450 /* Pods-nogleTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +388,7 @@
 		};
 		B0CCC04A2A6BD73F002467BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A4FD19FF1F3C18A31B0A43E /* Pods-nogleTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
