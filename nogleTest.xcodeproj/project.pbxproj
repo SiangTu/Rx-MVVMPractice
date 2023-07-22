@@ -16,6 +16,11 @@
 		B0CCC0442A6BD73F002467BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC0422A6BD73F002467BC /* LaunchScreen.storyboard */; };
 		B0CCC04C2A6BDE90002467BC /* CustomPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC04B2A6BDE90002467BC /* CustomPagingViewController.swift */; };
 		B0CCC04E2A6BDFBF002467BC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC04D2A6BDFBF002467BC /* ViewModel.swift */; };
+		B0CCC0502A6BEABC002467BC /* CryptoListVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC04F2A6BEABC002467BC /* CryptoListVIewController.swift */; };
+		B0CCC0522A6BEAE4002467BC /* CryptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC0512A6BEAE4002467BC /* CryptoTableViewCell.swift */; };
+		B0CCC0542A6BEBF1002467BC /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC0532A6BEBF1002467BC /* CellReusable.swift */; };
+		B0CCC0572A6BECC7002467BC /* CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC0562A6BECC7002467BC /* CGFloatExtension.swift */; };
+		B0CCC0592A6BECD2002467BC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC0582A6BECD2002467BC /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 		B0CCC0452A6BD73F002467BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0CCC04B2A6BDE90002467BC /* CustomPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPagingViewController.swift; sourceTree = "<group>"; };
 		B0CCC04D2A6BDFBF002467BC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		B0CCC04F2A6BEABC002467BC /* CryptoListVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListVIewController.swift; sourceTree = "<group>"; };
+		B0CCC0512A6BEAE4002467BC /* CryptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewCell.swift; sourceTree = "<group>"; };
+		B0CCC0532A6BEBF1002467BC /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
+		B0CCC0562A6BECC7002467BC /* CGFloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
+		B0CCC0582A6BECD2002467BC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		D71F4400EF83204DE9DE8262 /* Pods_nogleTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nogleTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -78,8 +88,10 @@
 				B0CCC0372A6BD73C002467BC /* AppDelegate.swift */,
 				B0CCC0392A6BD73C002467BC /* SceneDelegate.swift */,
 				B0CCC03B2A6BD73C002467BC /* ViewController.swift */,
+				B0CCC04F2A6BEABC002467BC /* CryptoListVIewController.swift */,
+				B0CCC0512A6BEAE4002467BC /* CryptoTableViewCell.swift */,
 				B0CCC04D2A6BDFBF002467BC /* ViewModel.swift */,
-				B0CCC04B2A6BDE90002467BC /* CustomPagingViewController.swift */,
+				B0CCC0552A6BECAB002467BC /* Utility */,
 				B0CCC03D2A6BD73C002467BC /* Main.storyboard */,
 				B0CCC0402A6BD73F002467BC /* Assets.xcassets */,
 				B0CCC0422A6BD73F002467BC /* LaunchScreen.storyboard */,
@@ -88,13 +100,23 @@
 			path = nogleTest;
 			sourceTree = "<group>";
 		};
+		B0CCC0552A6BECAB002467BC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B0CCC04B2A6BDE90002467BC /* CustomPagingViewController.swift */,
+				B0CCC0562A6BECC7002467BC /* CGFloatExtension.swift */,
+				B0CCC0582A6BECD2002467BC /* UIColorExtension.swift */,
+				B0CCC0532A6BEBF1002467BC /* CellReusable.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		ECE3474050BE729B3CBE94B2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				752C76BA73C4BFFC64FE3450 /* Pods-nogleTest.debug.xcconfig */,
 				5A4FD19FF1F3C18A31B0A43E /* Pods-nogleTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,11 +235,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0CCC0542A6BEBF1002467BC /* CellReusable.swift in Sources */,
+				B0CCC0572A6BECC7002467BC /* CGFloatExtension.swift in Sources */,
 				B0CCC04E2A6BDFBF002467BC /* ViewModel.swift in Sources */,
 				B0CCC04C2A6BDE90002467BC /* CustomPagingViewController.swift in Sources */,
 				B0CCC03C2A6BD73C002467BC /* ViewController.swift in Sources */,
+				B0CCC0502A6BEABC002467BC /* CryptoListVIewController.swift in Sources */,
 				B0CCC0382A6BD73C002467BC /* AppDelegate.swift in Sources */,
+				B0CCC0592A6BECD2002467BC /* UIColorExtension.swift in Sources */,
 				B0CCC03A2A6BD73C002467BC /* SceneDelegate.swift in Sources */,
+				B0CCC0522A6BEAE4002467BC /* CryptoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

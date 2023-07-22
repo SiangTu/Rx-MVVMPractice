@@ -25,14 +25,14 @@ class ViewController: UIViewController {
         return vc
     }()
     
-    private var spotViewController: UIViewController = {
-        let vc = UIViewController()
+    private var spotViewController: CryptoListViewController = {
+        let vc = CryptoListViewController()
         vc.view.backgroundColor = .red
         return vc
     }()
     
-    private var futureViewController: UIViewController = {
-        let vc = UIViewController()
+    private var futureViewController: CryptoListViewController = {
+        let vc = CryptoListViewController()
         vc.view.backgroundColor = .blue
         return vc
     }()
@@ -41,6 +41,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    private func setupUI() {
         addChild(pageViewController)
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
