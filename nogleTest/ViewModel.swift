@@ -9,19 +9,19 @@ import UIKit
 
 class ViewModel {
     
-    enum Page: String, CaseIterable {
-        case spot = "Spot"
-        case futures = "Future"
+    enum Page: CaseIterable {
+        case spot
+        case futures
+        
+        var title: String {
+            switch self {
+            case .futures:
+                return "Future"
+            case .spot:
+                return "Spot"
+            }
+        }
     }
     
     let pages = Page.allCases
-    
-    func getAllPage() -> [Page] {
-        return Page.allCases
-    }
-    
-    func getAllPageTitle() -> [String] {
-        Page.allCases.map { $0.rawValue }
-    }
-    
 }

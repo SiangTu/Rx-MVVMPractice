@@ -20,8 +20,11 @@ class CryptoListViewController: UIViewController {
     }()
     
     override func viewDidLoad() {
-        print(123)
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    private func setupUI() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
@@ -38,8 +41,8 @@ extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CryptoTableViewCell.reuseIdentifier, for: indexPath) as! CryptoTableViewCell
         
-        cell.titleLabel.text = "aoefkpqowf"
-        cell.contentLabel.text = "efwefwf"
+        cell.symbolLabel.text = "aoefkpqowf"
+        cell.priceLabel.text = "efwefwf"
         return cell
     }
 }

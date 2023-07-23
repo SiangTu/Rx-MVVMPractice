@@ -12,13 +12,13 @@ class CryptoTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(contentLabel)
-        titleLabel.snp.makeConstraints { make in
+        contentView.addSubview(symbolLabel)
+        contentView.addSubview(priceLabel)
+        symbolLabel.snp.makeConstraints { make in
             make.centerY.equalTo(contentView)
             make.left.equalTo(contentView).offset(30)
         }
-        contentLabel.snp.makeConstraints { make in
+        priceLabel.snp.makeConstraints { make in
             make.centerY.equalTo(contentView)
             make.right.equalTo(contentView).offset(-30)
         }
@@ -29,14 +29,14 @@ class CryptoTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var titleLabel: UILabel = {
+    lazy var symbolLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    lazy var contentLabel: UILabel = {
+    lazy var priceLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false

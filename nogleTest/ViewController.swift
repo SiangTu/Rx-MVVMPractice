@@ -11,15 +11,15 @@ import SnapKit
 class ViewController: UIViewController {
     
     private lazy var segmentedControl: UISegmentedControl = {
-        let view = UISegmentedControl(items: viewModel.getAllPageTitle())
+        let view = UISegmentedControl(items: viewModel.pages.map { $0.title })
         view.backgroundColor = .brown
         view.addTarget(self, action: #selector(segmentedControlChanged), for: .valueChanged)
         return view
     }()
     
+    // TODO: 重構該物件
     private lazy var pageViewController: CustomPagingViewController = {
-        let pages = viewModel.getAllPage()
-        let pageVCs = pages.map { getVC($0) }
+        let pageVCs = viewModel.pages.map { getVC($0) }
         let vc = CustomPagingViewController(pages: pageVCs)
         vc.pageDelegate = self
         return vc
