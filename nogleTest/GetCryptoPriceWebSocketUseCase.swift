@@ -8,14 +8,7 @@
 import Foundation
 import RxCocoa
 import RxSwift
-import Combine
-class foo {
-    var a: BehaviorRelay<Int>?
-    func get() -> Observable<Int>? {
-        a = BehaviorRelay<Int>(value: 0)
-        return a?.asObservable()
-    }
-}
+
 class GetCryptoPriceWebSocketUseCase: NSObject {
     
     struct ResponseValue: Decodable {
@@ -25,28 +18,20 @@ class GetCryptoPriceWebSocketUseCase: NSObject {
         }
         let data: [String: dictionaryValue]
     }
-    var bag = DisposeBag()
-    func execute() async throws -> Published<[String: CryptoModel]>.Publisher {
-        let fo = foo()
-        let p = fo.get()
-        p?.subscribe(onNext: { value in
-            print("recive: \(value)")
-        }).disposed(by: bag)
-        fo.a?.accept(10)
-        fo.a?.accept(100)
-//        try await connect()
-//        sendMessage()
-//        subscribe()
-        return $cryptoModelDict
+    
+    func execute() async throws -> Observable<[String: CryptoModel]> {
+        try await connect()
+        sendMessage()
+        subscribe()
+        return cryptoModelDict.asObservable()
     }
     
     private var webSocketTask: URLSessionWebSocketTask?
 
-    @Published
-    private var cryptoModelDict: [String: CryptoModel] = [:]
+    private var cryptoModelDict = BehaviorRelay<[String: CryptoModel]>(value: [:])
     
     private var conneceContinuation: CheckedContinuation<Void, Error>?
-    
+        
     private func connect() async throws {
         guard let url = URL(string: "wss://ws.btse.com/ws/futures") else {
             throw WebError.urlInvalid
@@ -71,38 +56,19 @@ class GetCryptoPriceWebSocketUseCase: NSObject {
         }
     }
     
-//    private func receive() {
-//           webSocketTask?.receive { result in
-//               switch result {
-//               case .success(let message):
-//                   switch message {
-//                   case .string(let text):
-//                       if let responseValue = self.deccodeResponse(text: text) {
-//                           self.cryptoModelDict = self.convert(responseValue)
-//                           print(1)
-//                       }
-//                   case .data(let data):
-//                       print("Received data: \(data)")
-//                   @unknown default:
-//                       fatalError()
-//                   }
-//               case .failure(let error):
-//                   print(error)
-//               }
-//               self.receive()
-//           }
-//       }
-    
     private func subscribe() {
         Task {
+            defer {
+                subscribe()
+            }
             let message =  try? await webSocketTask?.receive()
-            subscribe()
             guard let message = message,
                   case let .string(text) = message,
                   let responseValue = deccodeResponse(text: text) else {
                 return
             }
-            cryptoModelDict = convert(responseValue)
+            var dict = convert(responseValue)
+            cryptoModelDict.accept(dict)
         }
     }
     

@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxCocoa
+import RxSwift
 
 class CryptoListViewController: UIViewController {
     
@@ -21,10 +23,15 @@ class CryptoListViewController: UIViewController {
     
     private let viewModel = CryptoListViewModel()
     
+    private var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         viewModel.fetchData()
+        viewModel.cryptoList.asObservable().subscribe (onNext: { value in
+            self.tableView.reloadData()
+        }).disposed(by: disposeBag)
     }
     
     private func setupUI() {
@@ -38,7 +45,9 @@ class CryptoListViewController: UIViewController {
 
 extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.getNumOfRows()
+        let n = viewModel.getNumOfRows()
+//        print(n)
+        return n
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
