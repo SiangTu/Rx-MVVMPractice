@@ -5,7 +5,7 @@
 //  Created by 杜襄 on 2023/7/22.
 //
 
-import UIKit
+import Foundation
 
 class ViewModel {
     

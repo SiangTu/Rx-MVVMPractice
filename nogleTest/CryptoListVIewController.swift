@@ -19,9 +19,12 @@ class CryptoListViewController: UIViewController {
         return view
     }()
     
+    private let viewModel = CryptoListViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        viewModel.fetchData()
     }
     
     private func setupUI() {
@@ -35,14 +38,16 @@ class CryptoListViewController: UIViewController {
 
 extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        viewModel.getNumOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CryptoTableViewCell.reuseIdentifier, for: indexPath) as! CryptoTableViewCell
-        
-        cell.symbolLabel.text = "aoefkpqowf"
-        cell.priceLabel.text = "efwefwf"
+        guard let cryptoModel = viewModel.getCryptoModel(indexPath: indexPath) else {
+            return cell
+        }
+        cell.symbolLabel.text = cryptoModel.symbol
+        cell.priceLabel.text = cryptoModel.price
         return cell
     }
 }

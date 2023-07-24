@@ -31,11 +31,11 @@ class ViewController: UIViewController {
         return vc
     }()
     
-    private var futureViewController: CryptoListViewController = {
-        let vc = CryptoListViewController()
-        vc.view.backgroundColor = .blue
-        return vc
-    }()
+//    private var futureViewController: CryptoListViewController = {
+//        let vc = CryptoListViewController()
+//        vc.view.backgroundColor = .blue
+//        return vc
+//    }()
     
     private let viewModel = ViewModel()
     
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         case .spot:
             return spotViewController
         case .futures:
-            return futureViewController
+            return UIViewController()
         }
     }
 
