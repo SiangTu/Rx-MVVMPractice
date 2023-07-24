@@ -16,7 +16,7 @@
 		B0CCC0412A6BD73F002467BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC0402A6BD73F002467BC /* Assets.xcassets */; };
 		B0CCC0442A6BD73F002467BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CCC0422A6BD73F002467BC /* LaunchScreen.storyboard */; };
 		B0CCC04C2A6BDE90002467BC /* CustomPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC04B2A6BDE90002467BC /* CustomPagingViewController.swift */; };
-		B0CCC04E2A6BDFBF002467BC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC04D2A6BDFBF002467BC /* ViewModel.swift */; };
+		B0CCC04E2A6BDFBF002467BC /* CrtpyoPagingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC04D2A6BDFBF002467BC /* CrtpyoPagingViewModel.swift */; };
 		B0CCC0502A6BEABC002467BC /* CryptoListVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC04F2A6BEABC002467BC /* CryptoListVIewController.swift */; };
 		B0CCC0522A6BEAE4002467BC /* CryptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC0512A6BEAE4002467BC /* CryptoTableViewCell.swift */; };
 		B0CCC0542A6BEBF1002467BC /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC0532A6BEBF1002467BC /* CellReusable.swift */; };
@@ -41,7 +41,7 @@
 		B0CCC0432A6BD73F002467BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0CCC0452A6BD73F002467BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0CCC04B2A6BDE90002467BC /* CustomPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPagingViewController.swift; sourceTree = "<group>"; };
-		B0CCC04D2A6BDFBF002467BC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		B0CCC04D2A6BDFBF002467BC /* CrtpyoPagingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrtpyoPagingViewModel.swift; sourceTree = "<group>"; };
 		B0CCC04F2A6BEABC002467BC /* CryptoListVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListVIewController.swift; sourceTree = "<group>"; };
 		B0CCC0512A6BEAE4002467BC /* CryptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewCell.swift; sourceTree = "<group>"; };
 		B0CCC0532A6BEBF1002467BC /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
@@ -74,6 +74,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B07EBBE42A6EBFE30031E50C /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				B0CCC03B2A6BD73C002467BC /* ViewController.swift */,
+				B0CCC0512A6BEAE4002467BC /* CryptoTableViewCell.swift */,
+				B0CCC04F2A6BEABC002467BC /* CryptoListVIewController.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		B07EBBE52A6EBFF40031E50C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B0CCC04D2A6BDFBF002467BC /* CrtpyoPagingViewModel.swift */,
+				B0FA3F582A6D40950071D43E /* CryptoListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B07EBBE62A6EC00C0031E50C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0FA3F5C2A6D76450071D43E /* GetCryptoSymbolsUseCase.swift */,
+				B0FA3F5E2A6D76760071D43E /* GetCryptoPriceWebSocketUseCase.swift */,
+				B07EBBE22A6E89420031E50C /* WebError.swift */,
+				B0FA3F562A6D3CBD0071D43E /* CryptoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B0CCC02B2A6BD73C002467BC = {
 			isa = PBXGroup;
 			children = (
@@ -97,15 +127,9 @@
 			children = (
 				B0CCC0372A6BD73C002467BC /* AppDelegate.swift */,
 				B0CCC0392A6BD73C002467BC /* SceneDelegate.swift */,
-				B0CCC03B2A6BD73C002467BC /* ViewController.swift */,
-				B0CCC04F2A6BEABC002467BC /* CryptoListVIewController.swift */,
-				B0CCC0512A6BEAE4002467BC /* CryptoTableViewCell.swift */,
-				B0CCC04D2A6BDFBF002467BC /* ViewModel.swift */,
-				B0FA3F582A6D40950071D43E /* CryptoListViewModel.swift */,
-				B0FA3F5C2A6D76450071D43E /* GetCryptoSymbolsUseCase.swift */,
-				B0FA3F5E2A6D76760071D43E /* GetCryptoPriceWebSocketUseCase.swift */,
-				B07EBBE22A6E89420031E50C /* WebError.swift */,
-				B0FA3F562A6D3CBD0071D43E /* CryptoModel.swift */,
+				B07EBBE42A6EBFE30031E50C /* VIew */,
+				B07EBBE52A6EBFF40031E50C /* ViewModel */,
+				B07EBBE62A6EC00C0031E50C /* Model */,
 				B0CCC0552A6BECAB002467BC /* Utility */,
 				B0CCC03D2A6BD73C002467BC /* Main.storyboard */,
 				B0CCC0402A6BD73F002467BC /* Assets.xcassets */,
@@ -253,7 +277,7 @@
 				B0FA3F572A6D3CBD0071D43E /* CryptoModel.swift in Sources */,
 				B0CCC0542A6BEBF1002467BC /* CellReusable.swift in Sources */,
 				B0CCC0572A6BECC7002467BC /* CGFloatExtension.swift in Sources */,
-				B0CCC04E2A6BDFBF002467BC /* ViewModel.swift in Sources */,
+				B0CCC04E2A6BDFBF002467BC /* CrtpyoPagingViewModel.swift in Sources */,
 				B0FA3F5D2A6D76450071D43E /* GetCryptoSymbolsUseCase.swift in Sources */,
 				B0CCC04C2A6BDE90002467BC /* CustomPagingViewController.swift in Sources */,
 				B07EBBE32A6E89420031E50C /* WebError.swift in Sources */,

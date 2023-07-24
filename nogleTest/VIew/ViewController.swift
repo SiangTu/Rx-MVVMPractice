@@ -25,23 +25,24 @@ class ViewController: UIViewController {
         return vc
     }()
     
-    private var spotViewController: CryptoListViewController = {
-        let vc = CryptoListViewController()
+    private lazy var spotViewController: CryptoListViewController = {
+        let vc = CryptoListViewController(cryptoDict: viewModel.getCryptoDict(page: .spot))
         vc.view.backgroundColor = .red
         return vc
     }()
     
-//    private var futureViewController: CryptoListViewController = {
-//        let vc = CryptoListViewController()
-//        vc.view.backgroundColor = .blue
-//        return vc
-//    }()
+    private lazy var futureViewController: CryptoListViewController = {
+        let vc = CryptoListViewController(cryptoDict: viewModel.getCryptoDict(page: .futures))
+        vc.view.backgroundColor = .blue
+        return vc
+    }()
     
-    private let viewModel = ViewModel()
+    private let viewModel = CrtpyoPagingViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        viewModel.fetchData()
     }
     
     private func setupUI() {
@@ -61,12 +62,12 @@ class ViewController: UIViewController {
         }
     }
     
-    private func getVC(_ page: ViewModel.Page) -> UIViewController {
+    private func getVC(_ page: CrtpyoPagingViewModel.Page) -> UIViewController {
         switch page {
         case .spot:
             return spotViewController
         case .futures:
-            return UIViewController()
+            return futureViewController
         }
     }
 

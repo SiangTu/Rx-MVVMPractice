@@ -55,7 +55,8 @@ class GetCryptoPriceWebSocketUseCase: NSObject {
             }
         }
     }
-    
+    var firstT = true
+
     private func subscribe() {
         Task {
             defer {
@@ -67,7 +68,11 @@ class GetCryptoPriceWebSocketUseCase: NSObject {
                   let responseValue = deccodeResponse(text: text) else {
                 return
             }
-            var dict = convert(responseValue)
+            if firstT {
+                print(Date().timeIntervalSince1970)
+                firstT = false
+            }
+            let dict = convert(responseValue)
             cryptoModelDict.accept(dict)
         }
     }

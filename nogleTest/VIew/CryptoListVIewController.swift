@@ -12,6 +12,15 @@ import RxSwift
 
 class CryptoListViewController: UIViewController {
     
+    init(cryptoDict: Observable<[String: CryptoModel]>) {
+        self.viewModel = CryptoListViewModel(cryptoDict: cryptoDict)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private lazy var tableView: UITableView = {
         let view = UITableView()
         view.register(CryptoTableViewCell.self, forCellReuseIdentifier: CryptoTableViewCell.reuseIdentifier)
@@ -21,16 +30,19 @@ class CryptoListViewController: UIViewController {
         return view
     }()
     
-    private let viewModel = CryptoListViewModel()
+    private let viewModel: CryptoListViewModel
     
     private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        viewModel.fetchData()
         viewModel.cryptoList.asObservable().subscribe (onNext: { value in
-            self.tableView.reloadData()
+            Task {
+                await MainActor.run {
+                    self.tableView.reloadData()
+                }
+            }
         }).disposed(by: disposeBag)
     }
     
@@ -41,12 +53,12 @@ class CryptoListViewController: UIViewController {
             make.margins.equalTo(view)
         }
     }
+    var firstT = true
 }
 
 extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let n = viewModel.getNumOfRows()
-//        print(n)
         return n
     }
     
@@ -57,6 +69,10 @@ extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.symbolLabel.text = cryptoModel.symbol
         cell.priceLabel.text = cryptoModel.price
+        if cryptoModel.price != nil, firstT {
+            print(Date().timeIntervalSince1970)
+            firstT = false
+        }
         return cell
     }
 }

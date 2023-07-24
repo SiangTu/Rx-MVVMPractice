@@ -9,11 +9,13 @@ import Foundation
 
 struct CryptoModel: Decodable {
     
-    init(symbol: String, price: String? = nil) {
+    init(symbol: String, future: Bool = false, price: String? = nil) {
         self.symbol = symbol
+        self.future = future
         self.price = price
     }
     
     let symbol: String
+    let future: Bool
     var price: String?
 }
