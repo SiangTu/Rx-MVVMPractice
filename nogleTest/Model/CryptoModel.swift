@@ -9,7 +9,7 @@ import Foundation
 
 struct CryptoModel: Decodable {
     
-    init(symbol: String, future: Bool = false, price: String? = nil) {
+    init(symbol: String, future: Bool = false, price: Double? = nil) {
         self.symbol = symbol
         self.future = future
         self.price = price
@@ -17,5 +17,5 @@ struct CryptoModel: Decodable {
     
     let symbol: String
     let future: Bool
-    var price: String?
+    var price: Double?
 }

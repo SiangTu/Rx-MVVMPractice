@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class CrtpyoPagingViewModel {
+class CrypyoPagingViewModel {
     
     enum Page: CaseIterable {
         case spot
@@ -43,18 +43,16 @@ class CrtpyoPagingViewModel {
                 dict[$0.symbol] = $0
             }
             cryptoDict.accept(dict)
-            let observeable = try await getCryptoPriceUseCase.execute()
+            let webSocketDict = try await getCryptoPriceUseCase.execute()
             var combineDict: [String: CryptoModel] = [:]
             combineDict = cryptoDict.value
-            observeable.subscribe { dict in
-                print("😅")
+            webSocketDict.subscribe { [weak self] dict in
                 dict.forEach { (key, value) in
                     if let oldValue = combineDict[key] {
                         combineDict[key] = CryptoModel(symbol: key, future: oldValue.future, price: value.price)
                     }
                 }
-                // TODO: queue
-                self.cryptoDict.accept(combineDict)
+                self?.cryptoDict.accept(combineDict)
             }.disposed(by: disposeBag)
         }
     }

@@ -55,7 +55,6 @@ class GetCryptoPriceWebSocketUseCase: NSObject {
             }
         }
     }
-    var firstT = true
 
     private func subscribe() {
         Task {
@@ -67,10 +66,6 @@ class GetCryptoPriceWebSocketUseCase: NSObject {
                   case let .string(text) = message,
                   let responseValue = deccodeResponse(text: text) else {
                 return
-            }
-            if firstT {
-                print(Date().timeIntervalSince1970)
-                firstT = false
             }
             let dict = convert(responseValue)
             cryptoModelDict.accept(dict)
@@ -87,7 +82,7 @@ class GetCryptoPriceWebSocketUseCase: NSObject {
     private func convert(_ data: ResponseValue) -> [String: CryptoModel] {
         let modelList: [CryptoModel] = data.data.compactMap { (_, value) in
             guard value.price > 0 else { return nil }
-            return CryptoModel(symbol: value.id, price: String(value.price))
+            return CryptoModel(symbol: value.id, price: value.price)
         }
         var dict: [String: CryptoModel] = [:]
         modelList.forEach {

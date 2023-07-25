@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class CryptoPagingViewController: UIViewController {
     
     private lazy var segmentedControl: UISegmentedControl = {
         let view = UISegmentedControl(items: viewModel.pages.map { $0.title })
@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         return view
     }()
     
-    // TODO: 重構該物件
     private lazy var pageViewController: CustomPagingViewController = {
         let pageVCs = viewModel.pages.map { getVC($0) }
         let vc = CustomPagingViewController(pages: pageVCs)
@@ -27,17 +26,15 @@ class ViewController: UIViewController {
     
     private lazy var spotViewController: CryptoListViewController = {
         let vc = CryptoListViewController(cryptoDict: viewModel.getCryptoDict(page: .spot))
-        vc.view.backgroundColor = .red
         return vc
     }()
     
     private lazy var futureViewController: CryptoListViewController = {
         let vc = CryptoListViewController(cryptoDict: viewModel.getCryptoDict(page: .futures))
-        vc.view.backgroundColor = .blue
         return vc
     }()
     
-    private let viewModel = CrtpyoPagingViewModel()
+    private let viewModel = CrypyoPagingViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +59,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private func getVC(_ page: CrtpyoPagingViewModel.Page) -> UIViewController {
+    private func getVC(_ page: CrypyoPagingViewModel.Page) -> UIViewController {
         switch page {
         case .spot:
             return spotViewController
@@ -78,7 +75,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: CustomPagingViewControllerDelegate {
+extension CryptoPagingViewController: CustomPagingViewControllerDelegate {
     func didPageChange(index: Int) {
         segmentedControl.selectedSegmentIndex = index
     }
