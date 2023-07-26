@@ -24,10 +24,10 @@ class CryptoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        viewModel.cryptoList.subscribe (onNext: { value in
+        viewModel.cryptoList.subscribe (onNext: { [weak self] value in
             Task {
                 await MainActor.run {
-                    self.tableView.reloadData()
+                    self?.tableView.reloadData()
                 }
             }
         }).disposed(by: disposeBag)

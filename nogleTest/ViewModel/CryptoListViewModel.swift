@@ -24,9 +24,9 @@ class CryptoListViewModel {
             case .charDescending:
                 return "Z-A"
             case .priceDescending:
-                return "price🔽"
+                return "Price🔽"
             case .priceAscending:
-                return "price🔼"
+                return "Price🔼"
             }
         }
     }
@@ -37,8 +37,13 @@ class CryptoListViewModel {
             let list = dict.map { $1 }
             return self?.sort(list) ?? list
         }
-        .subscribe { [weak self] in
-            self?.cryptoListRelay.accept($0)
+        .subscribe { [weak self] value in
+            guard let self = self else { return }
+            Task {
+                await MainActor.run {
+                    self.cryptoListRelay.accept(value)
+                }
+            }
         }
         .disposed(by: disposeBag)
     }
