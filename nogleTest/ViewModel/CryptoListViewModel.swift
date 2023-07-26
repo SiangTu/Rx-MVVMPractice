@@ -14,6 +14,8 @@ class CryptoListViewModel {
     enum SortType: CaseIterable {
         case charDescending
         case charAscending
+        case priceDescending
+        case priceAscending
         
         var title: String {
             switch self {
@@ -21,6 +23,10 @@ class CryptoListViewModel {
                 return "A-Z"
             case .charDescending:
                 return "Z-A"
+            case .priceDescending:
+                return "price🔽"
+            case .priceAscending:
+                return "price🔼"
             }
         }
     }
@@ -74,6 +80,10 @@ class CryptoListViewModel {
             return list.sorted { $0.symbol < $1.symbol }
         case .charDescending:
             return list.sorted { $0.symbol > $1.symbol }
+        case .priceDescending:
+            return list.sorted { $0.price ?? 0 > $1.price ?? 0 }
+        case .priceAscending:
+            return list.sorted { $0.price ?? 0 < $1.price ?? 0 }
         }
     }
 

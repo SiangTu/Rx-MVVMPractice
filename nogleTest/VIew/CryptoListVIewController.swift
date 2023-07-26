@@ -67,7 +67,7 @@ class CryptoListViewController: UIViewController {
         sortButtons.forEach {
             $0.snp.makeConstraints { make in
                 make.height.equalTo(50)
-                make.width.equalTo(100)
+                make.width.equalTo(80)
             }
         }
         let stackView = UIStackView(arrangedSubviews: sortButtons)
