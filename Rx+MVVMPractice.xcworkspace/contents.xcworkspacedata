@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:nogleTest.xcodeproj">
+      location = "group:/Users/cm0747/Desktop/Rx+MVVMPractice/Rx+MVVMPractice.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Rx+MVVMPractice.xcodeproj">
    </FileRef>
 </Workspace>

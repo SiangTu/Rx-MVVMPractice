@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_nogleTestVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_nogleTestVersionString[];
+FOUNDATION_EXPORT double Pods_Rx_MVVMPracticeVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Rx_MVVMPracticeVersionString[];
 

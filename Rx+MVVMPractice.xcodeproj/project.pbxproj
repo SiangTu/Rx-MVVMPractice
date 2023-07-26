@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23A26562156350ACBB14700F /* Pods_nogleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71F4400EF83204DE9DE8262 /* Pods_nogleTest.framework */; };
+		54B80A1673015436A584D4E6 /* Pods_Rx_MVVMPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34044CDABD7EAC8108EFBD49 /* Pods_Rx_MVVMPractice.framework */; };
 		B07EBBE32A6E89420031E50C /* WebError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07EBBE22A6E89420031E50C /* WebError.swift */; };
 		B0CCC0382A6BD73C002467BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC0372A6BD73C002467BC /* AppDelegate.swift */; };
 		B0CCC03A2A6BD73C002467BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCC0392A6BD73C002467BC /* SceneDelegate.swift */; };
@@ -29,10 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5A4FD19FF1F3C18A31B0A43E /* Pods-nogleTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nogleTest.release.xcconfig"; path = "Target Support Files/Pods-nogleTest/Pods-nogleTest.release.xcconfig"; sourceTree = "<group>"; };
-		752C76BA73C4BFFC64FE3450 /* Pods-nogleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nogleTest.debug.xcconfig"; path = "Target Support Files/Pods-nogleTest/Pods-nogleTest.debug.xcconfig"; sourceTree = "<group>"; };
+		33E2C6C7EE420969767AE834 /* Pods-Rx+MVVMPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rx+MVVMPractice.release.xcconfig"; path = "Target Support Files/Pods-Rx+MVVMPractice/Pods-Rx+MVVMPractice.release.xcconfig"; sourceTree = "<group>"; };
+		34044CDABD7EAC8108EFBD49 /* Pods_Rx_MVVMPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rx_MVVMPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		701AEFB9233C6D33718038A8 /* Pods-Rx+MVVMPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rx+MVVMPractice.debug.xcconfig"; path = "Target Support Files/Pods-Rx+MVVMPractice/Pods-Rx+MVVMPractice.debug.xcconfig"; sourceTree = "<group>"; };
 		B07EBBE22A6E89420031E50C /* WebError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebError.swift; sourceTree = "<group>"; };
-		B0CCC0342A6BD73C002467BC /* nogleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nogleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0CCC0342A6BD73C002467BC /* Rx+MVVMPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rx+MVVMPractice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0CCC0372A6BD73C002467BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0CCC0392A6BD73C002467BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B0CCC03B2A6BD73C002467BC /* CryptoPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPagingViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		B0FA3F582A6D40950071D43E /* CryptoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewModel.swift; sourceTree = "<group>"; };
 		B0FA3F5C2A6D76450071D43E /* GetCryptoSymbolsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCryptoSymbolsUseCase.swift; sourceTree = "<group>"; };
 		B0FA3F5E2A6D76760071D43E /* GetCryptoPriceWebSocketUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCryptoPriceWebSocketUseCase.swift; sourceTree = "<group>"; };
-		D71F4400EF83204DE9DE8262 /* Pods_nogleTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nogleTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,21 +59,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23A26562156350ACBB14700F /* Pods_nogleTest.framework in Frameworks */,
+				54B80A1673015436A584D4E6 /* Pods_Rx_MVVMPractice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05ACD464753F578F08EA6F84 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D71F4400EF83204DE9DE8262 /* Pods_nogleTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		B07EBBE42A6EBFE30031E50C /* VIew */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,22 +99,22 @@
 		B0CCC02B2A6BD73C002467BC = {
 			isa = PBXGroup;
 			children = (
-				B0CCC0362A6BD73C002467BC /* nogleTest */,
+				B0CCC0362A6BD73C002467BC /* Rx+MVVMPractice */,
 				B0CCC0352A6BD73C002467BC /* Products */,
 				ECE3474050BE729B3CBE94B2 /* Pods */,
-				05ACD464753F578F08EA6F84 /* Frameworks */,
+				C57B08531C83391692801CD0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		B0CCC0352A6BD73C002467BC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B0CCC0342A6BD73C002467BC /* nogleTest.app */,
+				B0CCC0342A6BD73C002467BC /* Rx+MVVMPractice.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B0CCC0362A6BD73C002467BC /* nogleTest */ = {
+		B0CCC0362A6BD73C002467BC /* Rx+MVVMPractice */ = {
 			isa = PBXGroup;
 			children = (
 				B0CCC0372A6BD73C002467BC /* AppDelegate.swift */,
@@ -136,7 +128,7 @@
 				B0CCC0422A6BD73F002467BC /* LaunchScreen.storyboard */,
 				B0CCC0452A6BD73F002467BC /* Info.plist */,
 			);
-			path = nogleTest;
+			path = "Rx+MVVMPractice";
 			sourceTree = "<group>";
 		};
 		B0CCC0552A6BECAB002467BC /* Utility */ = {
@@ -150,11 +142,19 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		C57B08531C83391692801CD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34044CDABD7EAC8108EFBD49 /* Pods_Rx_MVVMPractice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ECE3474050BE729B3CBE94B2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				752C76BA73C4BFFC64FE3450 /* Pods-nogleTest.debug.xcconfig */,
-				5A4FD19FF1F3C18A31B0A43E /* Pods-nogleTest.release.xcconfig */,
+				701AEFB9233C6D33718038A8 /* Pods-Rx+MVVMPractice.debug.xcconfig */,
+				33E2C6C7EE420969767AE834 /* Pods-Rx+MVVMPractice.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -162,23 +162,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B0CCC0332A6BD73C002467BC /* nogleTest */ = {
+		B0CCC0332A6BD73C002467BC /* Rx+MVVMPractice */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0CCC0482A6BD73F002467BC /* Build configuration list for PBXNativeTarget "nogleTest" */;
+			buildConfigurationList = B0CCC0482A6BD73F002467BC /* Build configuration list for PBXNativeTarget "Rx+MVVMPractice" */;
 			buildPhases = (
-				A075C49D468DE1A5920D3233 /* [CP] Check Pods Manifest.lock */,
+				713ECE7BAD1548D9AC88E6A9 /* [CP] Check Pods Manifest.lock */,
 				B0CCC0302A6BD73C002467BC /* Sources */,
 				B0CCC0312A6BD73C002467BC /* Frameworks */,
 				B0CCC0322A6BD73C002467BC /* Resources */,
-				8B974B69FD51CE5376289C4B /* [CP] Embed Pods Frameworks */,
+				C82CBFED1F6667BFD1DEE9FE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = nogleTest;
+			name = "Rx+MVVMPractice";
 			productName = nogleTest;
-			productReference = B0CCC0342A6BD73C002467BC /* nogleTest.app */;
+			productReference = B0CCC0342A6BD73C002467BC /* Rx+MVVMPractice.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -196,7 +196,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B0CCC02F2A6BD73C002467BC /* Build configuration list for PBXProject "nogleTest" */;
+			buildConfigurationList = B0CCC02F2A6BD73C002467BC /* Build configuration list for PBXProject "Rx+MVVMPractice" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -209,7 +209,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B0CCC0332A6BD73C002467BC /* nogleTest */,
+				B0CCC0332A6BD73C002467BC /* Rx+MVVMPractice */,
 			);
 		};
 /* End PBXProject section */
@@ -228,24 +228,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8B974B69FD51CE5376289C4B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-nogleTest/Pods-nogleTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-nogleTest/Pods-nogleTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nogleTest/Pods-nogleTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A075C49D468DE1A5920D3233 /* [CP] Check Pods Manifest.lock */ = {
+		713ECE7BAD1548D9AC88E6A9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -260,11 +243,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-nogleTest-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Rx+MVVMPractice-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C82CBFED1F6667BFD1DEE9FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rx+MVVMPractice/Pods-Rx+MVVMPractice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rx+MVVMPractice/Pods-Rx+MVVMPractice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rx+MVVMPractice/Pods-Rx+MVVMPractice-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -430,7 +430,7 @@
 		};
 		B0CCC0492A6BD73F002467BC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 752C76BA73C4BFFC64FE3450 /* Pods-nogleTest.debug.xcconfig */;
+			baseConfigurationReference = 701AEFB9233C6D33718038A8 /* Pods-Rx+MVVMPractice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -438,7 +438,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 26WQ8KBXWF;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = nogleTest/Info.plist;
+				INFOPLIST_FILE = "Rx+MVVMPractice/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -449,7 +449,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Siang.nogleTest;
+				PRODUCT_BUNDLE_IDENTIFIER = "Siang.Rx+MVVMPractice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -459,7 +459,7 @@
 		};
 		B0CCC04A2A6BD73F002467BC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A4FD19FF1F3C18A31B0A43E /* Pods-nogleTest.release.xcconfig */;
+			baseConfigurationReference = 33E2C6C7EE420969767AE834 /* Pods-Rx+MVVMPractice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -467,7 +467,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 26WQ8KBXWF;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = nogleTest/Info.plist;
+				INFOPLIST_FILE = "Rx+MVVMPractice/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -478,7 +478,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Siang.nogleTest;
+				PRODUCT_BUNDLE_IDENTIFIER = "Siang.Rx+MVVMPractice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -489,7 +489,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B0CCC02F2A6BD73C002467BC /* Build configuration list for PBXProject "nogleTest" */ = {
+		B0CCC02F2A6BD73C002467BC /* Build configuration list for PBXProject "Rx+MVVMPractice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0CCC0462A6BD73F002467BC /* Debug */,
@@ -498,7 +498,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0CCC0482A6BD73F002467BC /* Build configuration list for PBXNativeTarget "nogleTest" */ = {
+		B0CCC0482A6BD73F002467BC /* Build configuration list for PBXNativeTarget "Rx+MVVMPractice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0CCC0492A6BD73F002467BC /* Debug */,
