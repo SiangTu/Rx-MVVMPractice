@@ -2,12 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/cm0747/Desktop/Rx+MVVMPractice/Rx+MVVMPractice.xcodeproj">
+      location = "group:RxMVVMPractice.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Rx+MVVMPractice.xcodeproj">
    </FileRef>
 </Workspace>

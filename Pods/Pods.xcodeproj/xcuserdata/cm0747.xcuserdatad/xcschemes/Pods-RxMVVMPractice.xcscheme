@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AC37DEBAEE566BA08D3D1CC04463FF80"
-               BuildableName = "Pods_Rx_MVVMPractice.framework"
-               BlueprintName = "Pods-Rx+MVVMPractice"
+               BlueprintIdentifier = "7E05B60DFD7FD2DBA6435A64FB1FAEA7"
+               BuildableName = "Pods_RxMVVMPractice.framework"
+               BlueprintName = "Pods-RxMVVMPractice"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

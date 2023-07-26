@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B0CCC0332A6BD73C002467BC"
-               BuildableName = "Rx+MVVMPractice.app"
-               BlueprintName = "Rx+MVVMPractice"
-               ReferencedContainer = "container:Rx+MVVMPractice.xcodeproj">
+               BuildableName = "RxMVVMPractice.app"
+               BlueprintName = "RxMVVMPractice"
+               ReferencedContainer = "container:RxMVVMPractice.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B0CCC0332A6BD73C002467BC"
-            BuildableName = "Rx+MVVMPractice.app"
-            BlueprintName = "Rx+MVVMPractice"
-            ReferencedContainer = "container:Rx+MVVMPractice.xcodeproj">
+            BuildableName = "RxMVVMPractice.app"
+            BlueprintName = "RxMVVMPractice"
+            ReferencedContainer = "container:RxMVVMPractice.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B0CCC0332A6BD73C002467BC"
-            BuildableName = "Rx+MVVMPractice.app"
-            BlueprintName = "Rx+MVVMPractice"
-            ReferencedContainer = "container:Rx+MVVMPractice.xcodeproj">
+            BuildableName = "RxMVVMPractice.app"
+            BlueprintName = "RxMVVMPractice"
+            ReferencedContainer = "container:RxMVVMPractice.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
