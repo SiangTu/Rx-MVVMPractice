@@ -37,23 +37,9 @@ class CrypyoPagingViewModel {
     
     func fetchData() {
         Task {
-            let symbols = try await getCryptoSymbolsUseCase.execute()
-            var dict: [String: CryptoModel] = [:]
-            symbols.forEach {
-                dict[$0.symbol] = $0
-            }
-            cryptoDict.accept(dict)
-            let webSocketDict = try await getCryptoPriceUseCase.execute()
-            var combineDict: [String: CryptoModel] = [:]
-            combineDict = cryptoDict.value
-            webSocketDict.subscribe { [weak self] dict in
-                dict.forEach { (key, value) in
-                    if let oldValue = combineDict[key] {
-                        combineDict[key] = CryptoModel(symbol: key, future: oldValue.future, price: value.price)
-                    }
-                }
-                self?.cryptoDict.accept(combineDict)
-            }.disposed(by: disposeBag)
+            let basicDict = try await fetchCryptoBasicInfo()
+            cryptoDict.accept(basicDict)
+            try await subscribeCryptoPrice()
         }
     }
     
@@ -64,4 +50,26 @@ class CrypyoPagingViewModel {
     private let getCryptoSymbolsUseCase = GetCryptoSymbolsUseCase()
     
     private let getCryptoPriceUseCase = GetCryptoPriceWebSocketUseCase()
+    
+    private func fetchCryptoBasicInfo() async throws -> [String: CryptoModel] {
+        let symbols = try await getCryptoSymbolsUseCase.execute()
+        var dict: [String: CryptoModel] = [:]
+        symbols.forEach {
+            dict[$0.symbol] = $0
+        }
+        return dict
+    }
+    
+    private func subscribeCryptoPrice() async throws {
+        let webSocketDict = try await getCryptoPriceUseCase.execute()
+        webSocketDict.subscribe { [weak self] dict in
+            guard var tempDict = self?.cryptoDict.value else { return }
+            dict.forEach { (key, value) in
+                if let oldValue = tempDict[key] {
+                    tempDict[key] = CryptoModel(symbol: key, future: oldValue.future, price: value.price)
+                }
+            }
+            self?.cryptoDict.accept(tempDict)
+        }.disposed(by: disposeBag)
+    }
 }
