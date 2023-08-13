@@ -49,7 +49,7 @@ class CryptoListViewController: UIViewController {
             button.setTitle(type.title, for: .normal)
             button.backgroundColor = .systemBlue
             button.rx.tap.subscribe(onNext:  {
-                self.viewModel.currentSortType = type
+                self.viewModel.currentSortType.accept(type)
             })
             .disposed(by: disposeBag)
             buttons.append(button)

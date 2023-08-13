@@ -37,26 +37,26 @@ class CryptoListViewModel {
             let list = dict.map { $1 }
             return self?.sort(list) ?? list
         }
+        .observeOn(MainScheduler.instance)
         .subscribe { [weak self] value in
             guard let self = self else { return }
-            Task {
-                await MainActor.run {
-                    self.cryptoListRelay.accept(value)
-                }
-            }
+            self.cryptoListRelay.accept(value)
         }
         .disposed(by: disposeBag)
+        currentSortType
+            .observeOn(MainScheduler.instance)
+            .subscribe { [weak self] _ in
+                guard let self else { return }
+                self.cryptoListRelay.accept(self.sort(self.cryptoListRelay.value))
+            }
+            .disposed(by: disposeBag)
     }
      
     let sortTypes: [SortType] = SortType.allCases
     
     private(set) lazy var cryptoList = cryptoListRelay.asObservable()
     
-    var currentSortType: SortType = .charAscending {
-        didSet {
-            cryptoListRelay.accept(sort(cryptoListRelay.value))
-        }
-    }
+    var currentSortType = BehaviorRelay<SortType>(value: .charAscending)
     
     func getNumOfRows() -> Int {
         cryptoListRelay.value.count
@@ -80,7 +80,7 @@ class CryptoListViewModel {
     private var cryptoDict: Observable<[String: CryptoModel]>
         
     private func sort(_ list: [CryptoModel]) -> [CryptoModel] {
-        switch currentSortType {
+        switch currentSortType.value {
         case .charAscending:
             return list.sorted { $0.symbol < $1.symbol }
         case .charDescending:
